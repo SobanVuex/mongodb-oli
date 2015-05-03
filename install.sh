@@ -21,8 +21,8 @@ test -d /var/log/mongodb || install -d /var/log/mongodb -o mongodb -g nogroup
 test -d /var/lib/mongodb && rm -rf /var/lib/mongodb
 
 # Check permissions
-test "$(stat -c %U:%G /var/log/mongodb)" = "mongodb:mongodb" || chown -R mongodb:nogroup /var/log/mongodb
-test "$(stat -c %U:%G /srv/mongodb)" = "mongodb:mongodb" || chown -R mongodb:nogroup /srv/mongodb
+test "$(stat -c %U:%G /var/log/mongodb)" = "mongodb:nogroup" || chown -R mongodb:nogroup /var/log/mongodb
+test "$(stat -c %U:%G /srv/mongodb)" = "mongodb:nogroup" || chown -R mongodb:nogroup /srv/mongodb
 
 # Restart mongod service
 service mongod restart
