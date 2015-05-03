@@ -15,9 +15,14 @@ apt-get install -y mongodb-org
 # Update configuration
 curl -sL "http://git.io/vJg5n" | tee /etc/mongod.conf
 
-# Make data directory if missing
-test -d /srv/mongodb || install -d /srv/mongodb -o mongodb -g nogroup
+# Check directories
+test -d /srv/mongodb || install -d /srv/mongodb -o mongodb -g mongodb
+test -d /var/log/mongodb || install -d /var/log/mongodb -o mongodb -g mongodb 
 test -d /var/lib/mongodb && rm -rf /var/lib/mongodb
+
+# Check permissions
+test "$(stat -c %U:%G /var/log/mongodb)" = "mongodb:mongodb" || chown -R mongodb:mongodb /var/log/mongodb
+test "$(stat -c %U:%G /srv/mongodb)" = "mongodb:mongodb" || chown -R mongodb:mongodb /srv/mongodb
 
 # Restart mongod service
 service mongod restart
