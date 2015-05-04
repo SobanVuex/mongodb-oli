@@ -4,7 +4,7 @@ Installation
 ------------
 
 ```bash
-curl -sL http://git.io/vJgpA | sudo bash
+curl -sL "http://git.io/vJgpA" | sudo bash
 ```
 
 Update configuration
