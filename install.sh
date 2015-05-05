@@ -13,7 +13,7 @@ apt-get update
 apt-get install -y mongodb-org
 
 # Update configuration
-curl -sL "http://git.io/vJg5n" | tee /etc/mongod.conf
+curl -sL "http://git.io/vJrLq" | tee /etc/mongod.conf
 
 # Check directories
 test -d /srv/mongodb || install -d /srv/mongodb -o mongodb -g nogroup

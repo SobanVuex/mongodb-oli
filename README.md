@@ -4,12 +4,12 @@ Installation
 ------------
 
 ```bash
-curl -sL "http://git.io/vJgpA" | sudo bash
+curl -sL "http://git.io/vJrIa" | sudo bash
 ```
 
 Update configuration
 --------------------
 
 ```bash
-curl -sL "http://git.io/vJg5n" | sudo tee /etc/mongod.conf && sudo service mongod restart
+curl -sL "http://git.io/vJrLq" | sudo tee /etc/mongod.conf && sudo service mongod restart
 ```
